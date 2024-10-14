@@ -1,0 +1,43 @@
+.gu-badge {
+    @extend .badge;
+    font-size: 0.75em;
+    box-shadow: $box-shadow-xs;
+    font-weight: 800;
+    display: inline-flex;
+    padding: 0.375rem;
+    border-radius: 6px;
+
+    @each $state, $value in map-keys($theme-colors) {
+        &.badge-#{$state} {
+            @if $state != "light" {
+                color: var(--#{$prefix}#{$state}-500);
+                background-color: var(--#{$prefix}#{$state}-50);
+                border: 1px solid var(--#{$prefix}#{$state}-200);
+            } 
+            @else {
+                color: $gray-300;
+                background-color: var(--#{$prefix}#{$state}-50);
+                border: 1px solid var(--#{$prefix}#{$state}-200);
+            }
+        }
+
+        &.badge-dot-#{$state} {
+            color: $gray-900;
+            align-items: center;
+            background-color: $white;
+            border: 1px solid $gray-200;
+
+            &::before {
+                content: " ";
+                position: relative;
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                border-radius: 6px;
+                margin-top: -0.5px;
+                background-color: var(--#{$prefix}#{$state}-500);
+                margin-right: 0.25rem;
+            }
+        }
+    }
+}

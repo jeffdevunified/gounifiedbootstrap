@@ -1,0 +1,11 @@
+<div class="gu-form-group gu-form-switch mb-3">
+    <div class="gu-form-switch-label" (click)="switchGroup.toggleValue(value)">
+        <div class="gu-form-title">
+            <span>{{label}}</span>
+            <input class="gu-form-switch-input" type="checkbox" [value]="value" [checked]="switchGroup.isChecked(value)" role="switch">
+        </div>
+        <div class="gu-form-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,238 @@
+// ---------------------------------- //
+// ------------- Colors ------------- //
+// -----------------------------------//
+
+$white:             #FFFFFF !default;
+
+$gray-50:           #F6F7F9 !default;
+$gray-100:          #ECEFF2 !default;
+$gray-200:          #D4DBE3 !default;
+$gray-300:          #AFBBCA !default;
+$gray-400:          #8497AC !default;
+$gray-500:          #647A93 !default;
+$gray-600:          #506279 !default;
+$gray-700:          #415063 !default;
+$gray-800:          #394453 !default;
+$gray-900:          #333C47 !default;
+$gray-950:          #20252D !default;
+
+$brand-50:          #F2FBF8 !default;
+$brand-100:         #D2F5E9 !default;
+$brand-200:         #A6E9D3 !default;
+$brand-300:         #71D7BA !default;
+$brand-400:         #49BFA1 !default;
+$brand-500:         #2AA286 !default;
+$brand-600:         #1F826C !default;
+$brand-700:         #1D6858 !default;
+$brand-800:         #1C5349 !default;
+$brand-900:         #1B463D !default;
+$brand-950:         #0A2924 !default;
+
+$navy-50:           #F0F7FF !default;
+$navy-100:          #E1EEFD !default;
+$navy-200:          #BCDCFB !default;
+$navy-300:          #80C0F9 !default;
+$navy-400:          #3DA0F3 !default;
+$navy-500:          #1384E4 !default;
+$navy-600:          #0766C2 !default;
+$navy-700:          #07529E !default;
+$navy-800:          #0A4682 !default;
+$navy-900:          #0E3B6C !default;
+$navy-950:          #0A2647 !default;
+
+$yellow-50:         #FEFBE8 !default;
+$yellow-100:        #FFF7C2 !default;
+$yellow-200:        #FFEA89 !default;
+$yellow-300:        #FFD22E !default;
+$yellow-400:        #FDC112 !default;
+$yellow-500:        #ECA706 !default;
+$yellow-600:        #CC8002 !default;
+$yellow-700:        #A35905 !default;
+$yellow-800:        #86460D !default;
+$yellow-900:        #723A11 !default;
+$yellow-950:        #431D05 !default;
+
+$red-50:            #FEF2F2 !default;
+$red-100:           #FEE2E2 !default;
+$red-200:           #FECACA !default;
+$red-300:           #FDA4A4 !default;
+$red-400:           #F97070 !default;
+$red-500:           #F25757 !default;
+$red-600:           #DE2424 !default;
+$red-700:           #BA1B1B !default;
+$red-800:           #9A1A1A !default;
+$red-900:           #801C1C !default;
+$red-950:           #450A0A !default;
+
+$green-50:          #EFFAF2 !default;
+$green-100:         #D7F4DC !default;
+$green-200:         #B2E8BF !default;
+$green-300:         #80D59A !default;
+$green-400:         #43B168 !default;
+$green-500:         #29A054 !default;
+$green-600:         #1B8043 !default;
+$green-700:         #156737 !default;
+$green-800:         #13522D !default;
+$green-900:         #114327 !default;
+$green-950:         #082616 !default;
+
+$grays: (
+    '50': $gray-50,
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+    '950': $gray-950,
+) !default;
+
+$brands: (
+    '50': $brand-50,
+    '100': $brand-100,
+    '200': $brand-200,
+    '300': $brand-300,
+    '400': $brand-400,
+    '500': $brand-500,
+    '600': $brand-600,
+    '700': $brand-700,
+    '800': $brand-800,
+    '900': $brand-900,
+    '950': $brand-950,
+) !default;
+
+$navys: (
+    '50': $navy-50,
+    '100': $navy-100,
+    '200': $navy-200,
+    '300': $navy-300,
+    '400': $navy-400,
+    '500': $navy-500,
+    '600': $navy-600,
+    '700': $navy-700,
+    '800': $navy-800,
+    '900': $navy-900,
+    '950': $navy-950,
+) !default;
+
+$yellows: (
+    '50': $yellow-50,
+    '100': $yellow-100,
+    '200': $yellow-200,
+    '300': $yellow-300,
+    '400': $yellow-400,
+    '500': $yellow-500,
+    '600': $yellow-600,
+    '700': $yellow-700,
+    '800': $yellow-800,
+    '900': $yellow-900,
+    '950': $yellow-950,
+) !default;
+
+$reds: (
+    '50': $red-50,
+    '100': $red-100,
+    '200': $red-200,
+    '300': $red-300,
+    '400': $red-400,
+    '500': $red-500,
+    '600': $red-600,
+    '700': $red-700,
+    '800': $red-800,
+    '900': $red-900,
+    '950': $red-950,
+) !default;
+
+$greens: (
+    '50': $green-50,
+    '100': $green-100,
+    '200': $green-200,
+    '300': $green-300,
+    '400': $green-400,
+    '500': $green-500,
+    '600': $green-600,
+    '700': $green-700,
+    '800': $green-800,
+    '900': $green-900,
+    '950': $green-950,
+) !default;
+
+$primary:       $brand-500 !default;
+$secondary:     $navy-500 !default;
+$warning:       $yellow-500 !default;
+$danger:        $red-500 !default;
+$success:       $green-500 !default;
+$light:         $gray-50 !default;
+$dark:          $gray-950 !default;
+
+$theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'warning': $warning,
+    'danger': $danger,
+    'success': $success,
+    'light': $light,
+    'dark': $dark
+) !default;
+
+
+
+// -------------------------------------- //
+// ------------- Typography ------------- //
+// -------------------------------------- //
+
+$font-family-sans-serif:                    "Plus Jakarta Sans", sans-serif !default;
+$font-size-root:                            16px !default;
+$font-size-base:                            0.813rem !default;
+$font-weight-base:                          500 !default;
+
+$h1-font-size:                              $font-size-root * 2.25 !default;
+$h2-font-size:                              $font-size-root * 2 !default;
+$h3-font-size:                              $font-size-root * 1.75 !default;
+$h4-font-size:                              $font-size-root * 1.5 !default;
+$h5-font-size:                              $font-size-root * 1.25 !default;
+$h6-font-size:                              $font-size-root !default;
+
+$body-color:                                $gray-900 !default;
+$body-bg:                                   $white !default;
+
+
+
+// -------------------------------------- //
+// ------------- Box Shadow ------------- //
+// -------------------------------------- //
+$box-shadow-xs:                             0 1px 2px 0 rgb(16, 24, 40, 0.05) !default;
+$box-shadow-sm:                             0 1px 2px 0 rgb(16, 24, 40, 0.06), 0 1px 3px 0 rgb(16, 24, 40, 0.1) !default;                         
+$box-shadow-md:                             0 2px 4px -2px rgb(16, 24, 40, 0.06), 0 4px 8px -2px rgb(16, 24, 40, 0.1)  !default;                         
+$box-shadow-lg:                             0 4px 6px -2px rgba(16, 24, 40, 0.03), 0 12px 16px -4px rgba(16, 24, 40, 0.08) !default;
+$box-shadow-xl:                             0 8px 8px -4px rgba(16, 24, 40, 0.03), 0 20px 24px -4px rgba(16, 24, 40, 0.08) !default;
+$box-shadow-2xl:                            0 24px 48px -12px rgba(16, 24, 40, 0.18) !default;
+$box-shadow-3xl:                            0 32px 64px -12px rgba(16, 24, 40, 0.14) !default;
+
+$shadows: (
+    'xs': $box-shadow-xs,
+    'sm': $box-shadow-sm,
+    'md': $box-shadow-md,
+    'lg': $box-shadow-lg,
+    'xl': $box-shadow-xl,
+    '2xl': $box-shadow-2xl,
+    '3xl': $box-shadow-3xl
+) !default;
+
+
+
+// --------------------------------- //
+// ------------- Modal ------------- //
+// --------------------------------- //
+$modal-fade-transform:                      scale(.95) !default;
+$modal-backdrop-bg:                         $gray-900 !default;
+
+
+
+// ---------------------------------- //
+// ------------- Switch ------------- //
+// ---------------------------------- //
+$form-switch-bg-image:                      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='%23FFFFFF'/></svg>");

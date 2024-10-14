@@ -1,0 +1,33 @@
+:root {
+    @each $color, $value in $brands {
+        --#{$prefix}primary-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $navys {
+        --#{$prefix}secondary-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $yellows {
+        --#{$prefix}warning-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $reds {
+        --#{$prefix}danger-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $greens {
+        --#{$prefix}success-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $grays {
+        --#{$prefix}light-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $grays {
+        --#{$prefix}dark-#{$color}: #{$value};
+    }
+
+    @each $shadow, $value in $shadows {
+        --#{$prefix}shadow-#{$shadow}: #{$value};
+    }
+}

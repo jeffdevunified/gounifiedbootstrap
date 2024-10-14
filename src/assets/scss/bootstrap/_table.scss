@@ -1,0 +1,54 @@
+.gu {
+    &-table {
+        @extend .table;
+
+        tr {
+            vertical-align: middle;
+
+            th {
+                font-weight: 700;
+                font-size: 0.75rem;
+                color: $gray-600;
+                background-color: $gray-50;
+                padding: 0.75rem 1rem;
+            }
+
+            td {
+                color: $gray-600;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                font-variant-numeric: tabular-nums;
+            }
+        }
+
+        &-error {
+            td {
+                background-color: $red-50;
+            }
+        }
+
+        &-selected {
+            td {
+                background-color: $gray-50;
+            }
+        }
+
+        &-sortable {
+            .gu-th-sortable {
+                cursor: pointer;
+                position: relative;
+                
+                &::after {
+                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%238497AC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up-down"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>');
+                    margin-left: 0.25rem;
+                    transform: translateY(3px);
+                    display: inline-flex;
+                }
+            }
+        }
+
+        &> :not(caption) > * > * {
+            border-color: $gray-100;
+        }
+    }
+}

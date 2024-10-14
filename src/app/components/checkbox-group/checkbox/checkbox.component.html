@@ -1,0 +1,11 @@
+<div class="gu-form-group gu-form-check mb-3">
+    <div class="gu-form-check-label" (click)="checkboxGroup.toggleValue(value)">
+        <div class="gu-form-title">
+            <span>{{label}}</span>
+            <input class="gu-form-check-input" type="checkbox" [value]="value" [checked]="checkboxGroup.isChecked(value)">
+        </div>
+        <div class="gu-form-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

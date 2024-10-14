@@ -1,0 +1,135 @@
+
+
+.gu-btn {
+    @extend .btn;
+
+    min-height: 36px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: $box-shadow-xs;
+    line-height: 1.25;
+
+    &.btn {
+
+        &-outline {
+            border: 1px solid $gray-200;
+            color: $gray-700;
+            font-weight: 700;
+            background-color: $white;
+            
+            &:hover {
+                background-color: $gray-50;
+            }
+            
+            &:active {
+                border-color: $gray-200;
+            } 
+        }
+
+        &-text {
+            border-color: transparent;
+            background-color: transparent;
+            font-weight: 700;
+            color: $gray-700;
+            box-shadow: none;
+
+            &:hover {
+                background-color: $gray-50;
+            }
+            
+            &:active {
+                border-color: transparent;
+                color: $gray-900;
+            }
+        }
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            
+            lucide-icon {
+                display: flex;
+            }
+
+            &-only {
+                padding: 0.5rem 0.625rem;
+
+                lucide-icon {
+                    display: flex;
+                }
+
+                &.btn-sm {
+                    min-height: 32px;
+                    padding: 0.5rem;
+                }
+            }
+        }
+        
+        @each $color in map-keys($theme-colors) {
+            &-#{$color} {
+                font-weight: 600;
+                
+                @if $color == 'warning' or $color == 'light' {
+                    color: $gray-950;
+
+                    &:active {
+                        color: $gray-900;
+                    }
+
+                } @else {
+                    color: $gray-50;
+
+                    &:active {
+                        color: $gray-100;
+                    }
+                }
+            }
+
+            &-outline-#{$color} {
+                font-weight: 600;
+                color: var(--#{$prefix}#{$color});
+
+                @if $color == 'light' {
+                    color: $gray-300;
+                    border-color: $gray-300;
+
+                    &:hover {
+                        color: $gray-900;
+                    }
+
+                    &:active {
+                        color: $gray-900;
+                    }
+
+                } @else {
+                    color: var(--#{$prefix}#{$color});
+
+                    &:hover {
+                        color: $gray-100;
+                    }
+
+                    &:active {
+                        color: $gray-100;
+                    }
+                }
+            }
+
+            &-text-#{$color} {
+                border-color: transparent;
+                background-color: transparent;
+                font-weight: 600;
+                color: var(--#{$prefix}#{$color});
+                box-shadow: none;
+
+                &:hover {
+                    background-color: var(--#{$prefix}#{$color}-50);
+                }
+
+                &:active {
+                    color: var(--#{$prefix}#{$color}-700);
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.gu-toast {
+    border: 0;
+    box-shadow: $box-shadow-2xl;
+    max-width: 450px !important;
+    width: 100%;
+
+    .toast {
+
+        &-header {
+            border: 0;
+            padding: {
+                top: 1rem;
+                right: 1rem;
+                bottom: 0;
+                left: 1rem;
+            };
+
+            .btn-close {
+                margin: 0;
+                background-size: 10px;
+            }
+
+            &+ .toast-body {
+                padding: {
+                    top: 0.25rem;
+                    right: 2.25rem;
+                    bottom: 1rem;
+                    left: 1rem;
+                };
+            }
+        }
+
+        &-title {
+            color: $gray-900;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        &-body {
+            font-size: $font-size-base;
+            color: $gray-600;
+            padding: 1rem;
+        }
+    }
+
+    &-icon {
+        padding: 0.5rem;
+        border-radius: 6px;
+        border: 1px solid $gray-100;
+        box-shadow: $box-shadow-xs;
+    }
+
+    @each $color in map-keys($theme-colors) {
+        &-#{$color} {
+            .toast-header,
+            .gu-toast-icon,
+            .gu-toast-dismiss {
+                color: var(--#{$prefix}#{$color});
+            }
+        }
+    }
+
+    &-dismiss {
+        margin-top: 0.5rem;
+        display: block;
+        text-decoration: none;
+        font-weight: 600;
+    }
+}

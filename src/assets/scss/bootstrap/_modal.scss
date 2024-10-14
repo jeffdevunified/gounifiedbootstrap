@@ -1,0 +1,33 @@
+.gu-modal {
+    
+    .modal {
+        &-content {
+            border: 0;
+            box-shadow: $box-shadow-xl;
+        }
+
+        &-body {
+            padding: 0.5rem 1.5rem;
+        }
+
+        &-header,
+        &-footer {
+            padding: 1.5rem;
+            border: 0;
+        }
+
+        &-footer {
+            & .btn:first-child {
+                margin-right: 0.5rem;
+            }
+
+            & > * {
+                margin: 0;
+            }
+        }
+    }
+
+    .btn-close {
+        margin-right: 0;
+    }
+}

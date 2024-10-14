@@ -1,0 +1,31 @@
+.gu-offcanvas {
+
+    &.offcanvas {
+        &-end,
+        &-top,
+        &-bottom {
+            border: 0 !important;
+            box-shadow: $box-shadow-xl !important;
+        }
+    }
+
+    .offcanvas {
+        &-title {
+            font-weight: 700;
+        }
+
+        &-subtitle {
+            color: $gray-500;
+            margin-bottom: 0;
+        }
+
+        &-footer {
+            padding: 1rem;
+        }
+
+        &-backdrop {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

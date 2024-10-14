@@ -1,0 +1,55 @@
+.gu-form-group {
+    padding-left: 0;
+
+    .gu-form {
+        &-check-label {
+            border: 1px solid $gray-100;
+            transition: all 0.15s ease-in-out;
+            border-radius: 6px;
+            padding: 1rem;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: $box-shadow-xs;
+
+            &:has(input:checked:not(:disabled)) {
+                border-color: $primary;
+                background-color: $white;
+                box-shadow: 0 0 0 1px $primary;
+            }
+
+            &:has(input:disabled) {
+                border-color: $gray-100;
+                background-color: $gray-50;
+            }
+        }
+
+        &-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 14px;
+            padding-bottom: 1rem;
+
+            &:has(input:disabled) {
+                color: $gray-400;
+            }
+        }
+
+        &-content {
+            padding: {
+                top: 0;
+                left: 1rem;
+                right: 2.5rem;
+                bottom: 0;
+            }
+            margin-left: -1rem;
+            margin-right: -1rem;
+            font-weight: 500;
+
+            &:has(+ *) {
+                padding-top: 1rem;
+            }
+        }
+    }
+}

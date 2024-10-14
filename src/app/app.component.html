@@ -1,336 +1,757 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
-      >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
+<div class="container mb-5">
+  <!-- Accordion -->
+  <div class="my-5">
+    <h6 class="fw-bold mb-3 text-primary">Accordion</h6>
+    
+      <div ngbAccordion [closeOthers]="true" class="accordion-flush gu-accordion">
+        @for (accordion of accordions; track accordion) {
+            <div ngbAccordionItem [collapsed]="true">
+                <h2 ngbAccordionHeader>
+                  <button ngbAccordionToggle class="accordion-button">
+                    <lucide-icon name="chevrons-up-down" [size]="18" [strokeWidth]="2.5" class="me-1"></lucide-icon>
+                    <span class="fw-semibold">{{ accordion.title }}</span>
+                  </button>
+                </h2>
+                <div ngbAccordionCollapse>
+                    <div ngbAccordionBody>
+                        <ng-template>{{ accordion.content }}</ng-template>
+                    </div>
+                </div>
+            </div>
         }
       </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
+  </div>
+  
+  <!-- Alert -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Alert</h6>
+    @for (alert of alerts; track alert) {
+      <ngb-alert [type]="alert.type" [dismissible]="true" (closed)="close(alert)" class="gu-alert d-flex align-items-start">
+        <lucide-icon [name]="alert.icon" class="alert-icon"></lucide-icon>
+        <div>
+          <h4 class="alert-heading">{{ alert.title }}</h4>
+          <p class="alert-content">{{ alert.message }}</p>
+          <div class="alert-actions">
+            <a href="#" class="alert-link">View details</a>
+          </div>
+        </div>
+      </ngb-alert>
+    }
+  </div>
+
+  <!-- Badges -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Badges</h6>
+    <div class="d-flex gap-3 flex-wrap mb-3">
+      <span class="gu-badge badge-primary">Badge</span>
+      <span class="gu-badge badge-secondary">Badge</span>
+      <span class="gu-badge badge-warning">Badge</span>
+      <span class="gu-badge badge-danger">Badge</span>
+      <span class="gu-badge badge-success">Badge</span>
+      <span class="gu-badge badge-light">Badge</span>
+      <span class="gu-badge badge-dark">Badge</span>
+    </div>
+    <div class="d-flex flex-wrap gap-3">
+      <span class="gu-badge badge-dot-primary">Badge</span>
+      <span class="gu-badge badge-dot-secondary">Badge</span>
+      <span class="gu-badge badge-dot-warning">Badge</span>
+      <span class="gu-badge badge-dot-danger">Badge</span>
+      <span class="gu-badge badge-dot-success">Badge</span>
+      <span class="gu-badge badge-dot-light">Badge</span>
+      <span class="gu-badge badge-dot-dark">Badge</span>
+    </div>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Breadcrumbs</h6>
+    <nav aria-label="breadcrumb">
+      <ol class="gu-breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Buttons -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Buttons</h6>
+    <div class="d-flex gap-3 flex-wrap mb-3">
+      <button class="gu-btn btn-primary">Button</button>
+      <button class="gu-btn btn-danger">Button</button>
+      <button class="gu-btn btn-outline">Outline</button>
+      <button class="gu-btn btn-text-primary">Button</button>
+      <button class="gu-btn btn-text-danger">Button</button>
+      <button class="gu-btn btn-text">Outline</button>
+    </div>
+    
+    <div class="d-flex gap-3 flex-wrap mb-3">
+      <button class="gu-btn btn-primary btn-icon">
+        Button
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-danger btn-icon">
+        Button
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-outline btn-icon">
+        Button
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-text-primary btn-icon">
+        Button
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-text-danger btn-icon">
+        Button
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-outline btn-text btn-icon">
+        Button
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+    </div>
+
+    <div class="d-flex gap-3 flex-wrap mb-3">
+      <button class="gu-btn btn-primary btn-icon-only">
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-danger btn-icon-only">
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-outline btn-icon-only">
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-primary btn-text-primary btn-icon-only">
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-danger btn-text-danger btn-icon-only">
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+      <button class="gu-btn btn-outline btn-text btn-icon-only">
+        <lucide-icon name="circle-check-big" size="14" strokeWidth="3"></lucide-icon>
+      </button>
+    </div>
+
+    <div class="d-flex gap-3 mb-3">
+      <div class="btn-group">
+        <button class="gu-btn btn-outline">Select All</button>
+        <button class="gu-btn btn-outline">Active</button>
+        <button class="gu-btn btn-outline">Overdue</button>
       </div>
     </div>
   </div>
-</main>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- Pagination -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Pagination</h6>
+    <ngb-pagination [collectionSize]="40" [(page)]="page" aria-label="Default pagination" class="gu-pagination">
+      <ng-template ngbPaginationPrevious>
+        <lucide-icon name="chevron-left" size="16"></lucide-icon>
+      </ng-template>
+	    <ng-template ngbPaginationNext>
+        <lucide-icon name="chevron-right" size="16"></lucide-icon>
+      </ng-template>
+    </ngb-pagination>
+  </div>
 
+  <!-- Dropdowns -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Dropdowns</h6>
+    <div class="d-flex gap-3 mb-3">
+      <div ngbDropdown class="d-inline-block gu-dropdown">
+        <button type="button" class="btn gu-btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>
+          Toggle dropdown
+          <lucide-icon name="chevron-down" size="16" strokeWidth="3"></lucide-icon>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="gu-dropdown">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+
+      <div ngbDropdown class="d-inline-block gu-dropdown" placement="bottom-end">
+        <button type="button" class="btn gu-btn btn-text" id="dropdownBasic1" ngbDropdownToggle>
+          <div class="d-flex flex-column text-end">
+            <p class="fw-bold mb-0">John Doe</p>
+            <small class="text-muted mb-0">Administrator</small>
+          </div>
+          <div class="bg-primary p-2 text-white fw-bold rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+            JD
+          </div>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="gu-dropdown-lg">
+          <p class="dropdown-header">Administration Menu</p>
+          <div class="dropdown-divider"></div>
+          @for (menu of dropdownMenus; track menu) {
+            <button ngbDropdownItem>
+              <lucide-icon [name]="menu.icon" size="16"></lucide-icon>
+              {{ menu.label }}
+            </button>
+          }
+          <div class="dropdown-divider"></div>
+          <button ngbDropdownItem class="text-danger">
+            <lucide-icon name="log-out" size="16" class="text-danger"></lucide-icon>
+            Log Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Modals</h6>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h6 class="modal-title fw-bold">Are you sure to delete this invoice?</h6>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">
+          There's no way to retrieve this invoice once deleted. Still want to delete it?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="gu-btn btn-text" (click)="modal.close()">Cancel</button>
+        <button type="button" class="gu-btn btn-danger" (click)="modal.close()">Delete anyway</button>
+      </div>
+    </ng-template>
+
+    <ng-template #formContent let-modal>
+      <div class="modal-header">
+        <h6 class="modal-title fw-bold">Add Payment Option</h6>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Option name</label>
+          <ng-select appearance="outline" class="gu-form-select" placeholder="Select payment option" #agreeSelect labelForId="yesno" [searchable]="false">
+            <lucide-icon name="chevron-down" size="16" strokeWidth="3"></lucide-icon>
+            <ng-option value="specific-invoice">Specific Invoice</ng-option>
+            <ng-option value="lump-sum">Lump Sum Payment</ng-option>
+            <ng-option value="last-statement">Last Statement</ng-option>
+            <ng-option value="lump-sum">Others</ng-option>
+          </ng-select>
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Caption</label>
+          <input type="text" class="gu-form-control" placeholder="E.g. Last Statement">
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Validation rules</label>
+          <textarea class="gu-form-control" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="gu-btn btn-text" (click)="modal.close()">Cancel</button>
+        <button type="button" class="gu-btn btn-primary" (click)="modal.close()">Save Changes</button>
+      </div>
+    </ng-template>
+    <div class="d-flex gap-3">
+      <button class="gu-btn btn-primary" (click)="open(content)">Open Modal</button>
+      <button class="gu-btn btn-outline" (click)="open(formContent)">Open Form Modal</button>
+    </div>
+  </div>
+
+  <!-- Input Fields -->
+  <div class="mb-5">
+    <h6 class="fw-bold mb-3 text-primary">Input fields</h6>
+    <div style="max-width: 450px;">
+      <div class="gu-card">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="" class="gu-form-label">Text Label</label>
+            <input type="text" name="default-field" class="gu-form-control" placeholder="Input field">
+            <div class="helper-text">This is a helper text message below text field.</div>
+          </div>
+          <div class="mb-3">
+            <label for="" class="gu-form-label">Text Label</label>
+            <input type="text" name="error-field" class="gu-form-control form-control-danger" placeholder="Input field">
+            <div class="helper-text">This is an error message.</div>
+          </div>
+          <div class="mb-3">
+            <ng-select appearance="outline" class="gu-form-select" placeholder="Select payment option" #agreeSelect labelForId="yesno" [searchable]="false">
+              <lucide-icon name="chevron-down" size="16" strokeWidth="3"></lucide-icon>
+              <ng-option value="specific-invoice">Specific Invoice</ng-option>
+              <ng-option value="lump-sum">Lump Sum Payment</ng-option>
+              <ng-option value="last-statement">Last Statement</ng-option>
+              <ng-option value="lump-sum">Others</ng-option>
+            </ng-select>
+          </div>
+          <div class="mb-3">
+            <label for="" class="gu-form-label">Textarea Label</label>
+            <textarea class="gu-form-control" name="textarea-field" rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkbox, Radio & Switches -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Checkbox, Radio, & Switch</h6>
+    <div class="row">
+      <div class="col">
+        <div class="gu-form-check mb-3">
+          <input class="gu-form-check-input" type="checkbox" value="" id="disabled-checkbox" disabled>
+          <label class="gu-form-check-label" for="disabled-checkbox">
+            Disabled checkbox
+          </label>
+        </div>
+        <div class="gu-form-check mb-3">
+          <input class="gu-form-check-input" type="checkbox" value="" id="active-checkbox">
+          <label class="gu-form-check-label" for="active-checkbox">
+            Active checkbox
+          </label>
+        </div>
+        <div class="gu-form-check mb-3">
+          <input class="gu-form-check-input" type="checkbox" value="" id="checked-checkbox" checked>
+          <label class="gu-form-check-label" for="checked-checkbox">
+            Checked checkbox
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="gu-form-check mb-3">
+          <input class="gu-form-check-input" type="radio" value="" name="radio" id="disabled-radio" disabled>
+          <label class="gu-form-check-label" for="disabled-radio">
+            Disabled radio
+          </label>
+        </div>
+        <div class="gu-form-check mb-3">
+          <input class="gu-form-check-input" type="radio" value="" name="radio" id="active-radio">
+          <label class="gu-form-check-label" for="active-radio">
+            Active radio
+          </label>
+        </div>
+        <div class="gu-form-check mb-3">
+          <input class="gu-form-check-input" type="radio" value="" name="radio" id="checked-radio" checked>
+          <label class="gu-form-check-label" for="checked-radio">
+            Checked radio
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="gu-form-check gu-form-switch mb-3">
+          <input class="gu-form-switch-input" type="checkbox" value="" role="switch" id="disabled-switch" disabled>
+          <label class="gu-form-switch-label" for="disabled-switch">
+            Disabled switch
+          </label>
+        </div>
+        <div class="gu-form-check gu-form-switch mb-3">
+          <input class="gu-form-switch-input" type="checkbox" value="" role="switch" id="active-switch">
+          <label class="gu-form-switch-label" for="active-switch">
+            Active switch
+          </label>
+        </div>
+        <div class="gu-form-check gu-form-switch mb-3">
+          <input class="gu-form-switch-input" type="checkbox" value="" role="switch" id="checked-switch" checked>
+          <label class="gu-form-switch-label" for="checked-switch">
+            Checked switch
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tables -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Tables</h6>
+
+    <div class="gu-card">
+      <div class="py-4 px-3">
+        <h6 class="fw-bold mb-4">Open Invoices</h6>
+        <div class="d-flex">
+          <div class="gu-form-icon" style="width: 250px;">
+            <input type="text" name="default-field" class="gu-form-control form-search" placeholder="Search invoice">
+            <lucide-icon name="search" size="16"></lucide-icon>
+          </div>
+
+          <button class="gu-btn btn-outline btn-icon ms-2">
+            Filters
+            <lucide-icon name="list-filter" size="14"></lucide-icon>
+          </button>
+
+          <div ngbDropdown class="d-inline-block gu-dropdown ms-auto" placement="bottom-end">
+            <button type="button" class="btn gu-btn btn-outline" id="dropdownBasic1" ngbDropdownToggle>
+              Columns
+              <lucide-icon name="columns-3" size="16" strokeWidth="3"></lucide-icon>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="gu-dropdown">
+              <p class="dropdown-header">Toggle columns</p>
+              <div class="px-3 py-2">
+                <div class="gu-form-check gu-form-switch">
+                  <input class="gu-form-switch-input" type="checkbox" value="" role="switch" id="date-issued" checked>
+                  <label class="gu-form-switch-label" for="date-issued">
+                    Date Issued
+                  </label>
+                </div>
+              </div>
+              <div class="px-3 py-2">
+                <div class="gu-form-check gu-form-switch">
+                  <input class="gu-form-switch-input" type="checkbox" value="" role="switch" id="status" checked>
+                  <label class="gu-form-switch-label" for="status">
+                    Status
+                  </label>
+                </div>
+              </div>
+              <div class="px-3 py-2">
+                <div class="gu-form-check gu-form-switch">
+                  <input class="gu-form-switch-input" type="checkbox" value="" role="switch" id="notes" checked>
+                  <label class="gu-form-switch-label" for="notes">
+                    Notes
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="btn-group ms-2">
+            <button class="gu-btn btn-outline" (click)="selectAll()">Select All</button>
+            <button class="gu-btn btn-outline" (click)="selectStatus('active')">Active</button>
+            <button class="gu-btn btn-outline" (click)="selectStatus('overdue')">Overdue</button>
+          </div>
+        </div>
+      </div>
+      <table class="gu-table gu-table-sortable" style="table-layout: fixed;">
+        <thead>
+          <tr>
+            <th style="width: 50px;">
+              <div class="gu-form-check">
+                <input class="gu-form-check-input" type="checkbox" name="row-checked-all" [(ngModel)]="headerCheckbox" (ngModelChange)="headerCheckbox" id="active-checkbox-all">
+              </div>
+            </th>
+            <th class="gu-th-sortable" sortable="id" (sort)="onSort($event)">Invoice No.</th>
+            <th class="gu-th-sortable" sortable="dateIssued" (sort)="onSort($event)">Date Issued</th>
+            <th class="gu-th-sortable" sortable="status" (sort)="onSort($event)">Status</th>
+            <th class="gu-th-sortable text-end" sortable="origAmount" (sort)="onSort($event)">Original Amount</th>
+            <th class="gu-th-sortable text-end" sortable="amtDue" (sort)="onSort($event)">Amount Due</th>
+            <th class="gu-th-sortable text-end" sortable="amtToPay" (sort)="onSort($event)">Amount To Pay</th>
+            <th class="gu-th-sortable" sortable="notes" (sort)="onSort($event)">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of tempDataSet; track data.id) {
+            <tr [ngClass]="{'gu-table-error' : data.status >= 950, 'gu-table-selected' : data.checked}">
+              <td>
+                <div class="gu-form-check">
+                  <input class="gu-form-check-input" type="checkbox" name="row-checked" [(ngModel)]="data.checked" (ngModelChange)="changeRowStatus(data.checked)"  id="active-checkbox">
+                </div>
+              </td>
+              <td>
+                <a href="#" class="mb-0 text-decoration-none">{{ data.id }}</a>
+              </td>
+              <td>{{ data.dateIssued | date }}</td>
+              <td>
+                @if (data.status <= 950) {
+                  <span class="gu-badge badge-dot-primary">Active</span>
+                } @else {
+                  <span class="gu-badge badge-dot-danger">Overdue</span>
+                }
+              </td>
+              <td class="text-end">{{ data.origAmount | currency : '$' }}</td>
+              <td class="text-end">{{ data.amtDue | currency : '$' }}</td>
+              <td class="text-end">{{ data.amtToPay | currency : '$' }}</td>
+              <td>{{ data.notes }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="9" class="text-center">
+                <div class="d-flex flex-column py-3">
+                  <img src="../assets/images/empty-icon.png" alt="" class="mb-2 mx-auto d-block" style="width: 48px;">
+                  <p class="fw-bold mb-1">No data present.</p>
+                  <p class="mb-0">There are no more active invoices that needs to be paid.</p>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      <ngb-pagination 
+        [collectionSize]="collectionSize" 
+        [(page)]="page"
+        [pageSize]="pageSize"
+        (pageChange)="refreshData()"
+        aria-label="Default pagination" 
+        class="gu-pagination ms-auto pe-3"
+      >
+        <ng-template ngbPaginationPrevious>
+          <lucide-icon name="chevron-left" size="16"></lucide-icon>
+        </ng-template>
+        <ng-template ngbPaginationNext>
+          <lucide-icon name="chevron-right" size="16"></lucide-icon>
+        </ng-template>
+      </ngb-pagination>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Offcanvas</h6>
+    <ng-template #offcanvas let-offcanvas>
+      <div class="offcanvas-header">
+        <div class="d-flex flex-column">
+          <h6 class="offcanvas-title">Edit form field</h6>
+          <p class="offcanvas-subtitle">Edit form field details for paynow form.</p>
+        </div>
+        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Field Name</label>
+          <input type="text" name="default-field" class="gu-form-control">
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Caption</label>
+          <input type="text" name="default-field" class="gu-form-control">
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Bind to</label>
+          <input type="text" name="default-field" class="gu-form-control">
+          <div class="helper-text">This is where the data will reflect.</div>
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Placeholder text</label>
+          <input type="text" name="default-field" class="gu-form-control">
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Default value</label>
+          <input type="text" name="default-field" class="gu-form-control">
+        </div>
+        <div class="mb-3">
+          <label for="" class="gu-form-label">Custom field id</label>
+          <input type="text" name="default-field" class="gu-form-control">
+        </div>
+      </div>
+      <div class="offcanvas-footer">
+        <button class="gu-btn btn-block btn-primary w-100">Save Changes</button>
+      </div>
+    </ng-template>
+    <button class="gu-btn btn-outline" (click)="openEnd(offcanvas)">Open Offcanvas</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Tabs</h6>
+
+    <p class="text-muted fw-bold">Default tabs</p>
+    <div class="mb-5">
+      <ul ngbNav #pillNav="ngbNav" class="gu-nav-pill">
+        @for (tab of tabs; track tab) {
+          <li [ngbNavItem]="tab.id">
+            <button ngbNavLink>{{ tab.title }}</button>
+            <ng-template ngbNavContent>
+              <p>{{ tab.content }}</p>
+            </ng-template>
+          </li>
+        }
+      </ul>
+      
+      <div [ngbNavOutlet]="pillNav" class="mt-3"></div>
+  
+      <ul ngbNav #borderNav="ngbNav" class="gu-nav-bordered">
+        @for (tab of tabs; track tab) {
+          <li [ngbNavItem]="tab.id">
+            <button ngbNavLink>{{ tab.title }}</button>
+            <ng-template ngbNavContent>
+              <p>{{ tab.content }}</p>
+            </ng-template>
+          </li>
+        }
+      </ul>
+      
+      <div [ngbNavOutlet]="borderNav" class="mt-3"></div>
+    </div>
+
+    <p class="text-muted fw-bold">Full width tabs</p>
+    <div class="row">
+      <div class="col">
+        <ul ngbNav #pillNavFull="ngbNav" class="gu-nav-pill gu-nav-full">
+          @for (tab of tabs; track tab) {
+            <li [ngbNavItem]="tab.id">
+              <button ngbNavLink>{{ tab.title }}</button>
+              <ng-template ngbNavContent>
+                <p>{{ tab.content }}</p>
+              </ng-template>
+            </li>
+          }
+        </ul>
+        
+        <div [ngbNavOutlet]="pillNavFull" class="mt-3"></div>
+      </div>
+      <div class="col">
+        <ul ngbNav #borderedNavFull="ngbNav" class="gu-nav-bordered gu-nav-full">
+          @for (tab of tabs; track tab) {
+            <li [ngbNavItem]="tab.id">
+              <button ngbNavLink>{{ tab.title }}</button>
+              <ng-template ngbNavContent>
+                <p>{{ tab.content }}</p>
+              </ng-template>
+            </li>
+          }
+        </ul>
+        
+        <div [ngbNavOutlet]="borderedNavFull" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Toasts</h6>
+    <ngb-toast [autohide]="false" class="gu-toast gu-toast-primary mb-3" (hidden)="show = false">
+      <div class="d-flex gap-3 align-items-start">
+        <div class="gu-toast-icon">
+          <lucide-icon name="shield-check"></lucide-icon>
+        </div>
+        <div>
+          <p class="toast-title">Full protection is active.</p>
+          <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+          <a href="#" class="gu-toast-dismiss">Dismiss</a>
+        </div>
+      </div>
+		</ngb-toast>
+    <ngb-toast header="Remaining credits near threshold." [autohide]="false" class="gu-toast gu-toast-danger" (hidden)="show = false">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+      <a href="#" class="gu-toast-dismiss">Dismiss</a>
+    </ngb-toast>
+  </div>
+
+  <!-- Tooltips -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Tooltips</h6>
+    <button class="gu-btn btn-outline" placement="right" ngbTooltip="Tooltip on top">Tooltip at top</button>
+  </div>
+
+  <!-- Popovers -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Popovers</h6>
+    <ng-template #popTitle>
+      Popover Title
+    </ng-template>
+    <ng-template #popContent>
+      Popovers can contain any arbitrary HTML, Angular bindings and even directives! Simply enclose desired content or title in a ng-template element.
+    </ng-template>
+    <button class="gu-btn btn-outline" [ngbPopover]="popContent" [popoverTitle]="popTitle" popoverClass="gu-popover">Popover Default</button>
+  </div>
+
+  <!-- Text Editor -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Text Editor</h6>
+    <div class="row row-gap-3">
+      <div class="col-12 col-md-6">
+        <div class="gu-card">
+          <div class="card-body">
+              <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="mb-3" style="height: 300px;"></ngx-monaco-editor>
+              <button class="gu-btn btn-outline" (click)="showEditorCode()">Show code</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="gu-card">
+          <div class="card-body">
+              <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" class="mb-3" style="height: 300px;"></ngx-monaco-editor>
+              <button class="gu-btn btn-outline" (click)="showEditorCode()">Show code</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Component: Checkbox Group -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Checkbox Group</h6>
+    <div class="row">
+      <div class="col-4">
+        <form [formGroup]="paymentForm">
+          <gu-checkbox-group formControlName="option">
+            <gu-checkbox value="last-statement" label="Last Statement">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-checkbox>
+            <gu-checkbox value="individual-invoice" label="Individual Invoice">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-checkbox>
+            <gu-checkbox value="lump-sum" label="Lump Sum Payment">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-checkbox>
+          </gu-checkbox-group>
+        </form>
+       
+      </div>
+      <div class="col">
+        <div class="gu-card">
+          <div class="card-body">
+            <p class="fw-bold">Selected Values</p>
+            <pre class="mb-0">{{ paymentForm.value.option | json }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Component: Radio Group -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Radio Group</h6>
+    <div class="row">
+      <div class="col-4">
+        <form [formGroup]="paymentForm">
+          <gu-radio-group formControlName="radio">
+            <gu-radio value="last-statement" label="Last Statement">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-radio>
+            <gu-radio value="individual-invoice" label="Individual Invoice">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-radio>
+            <gu-radio value="lump-sum" label="Lump Sum Payment">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-radio>
+          </gu-radio-group>
+        </form>
+      </div>
+      <div class="col">
+        <div class="gu-card">
+          <div class="card-body">
+            <p class="fw-bold">Selected Values</p>
+            <pre class="mb-0">{{ paymentForm.value.radio | json }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Component: Switch Group -->
+  <div class="mb-5">
+    <h6 class="fw-bold text-primary mb-3">Switch Group</h6>
+    <div class="row">
+      <div class="col-4">
+        <form [formGroup]="paymentForm">
+          <gu-switch-group formControlName="switch">
+            <gu-switch value="last-statement" label="Last Statement">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-switch>
+            <gu-switch value="individual-invoice" label="Individual Invoice">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-switch>
+            <gu-switch value="lump-sum" label="Lump Sum Payment">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </gu-switch>
+          </gu-switch-group>
+        </form>
+      </div>
+      <div class="col">
+        <div class="gu-card">
+          <div class="card-body">
+            <p class="fw-bold">Selected Values</p>
+            <pre class="mb-0">{{ paymentForm.value.switch | json }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <router-outlet />

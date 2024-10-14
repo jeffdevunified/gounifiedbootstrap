@@ -1,0 +1,154 @@
+.gu {
+    &-form-icon {
+        position: relative;
+
+        .gu-form-control {
+            padding-left: 2rem;
+        }
+
+        lucide-icon {
+            display: flex;
+            position: absolute;
+            top: 10px;
+            left: 8px;
+            color: $gray-300;
+        }
+    }
+
+    &-form-control {
+        @extend .form-control;
+        border-color: $gray-200;
+        min-height: 36px;
+        box-shadow: $box-shadow-xs;
+        padding: 0.25rem 0.75rem;
+        
+        &:focus {
+            @include input-focus(primary);
+        }
+    
+        &+ .helper-text {
+            margin-top: 0.25rem;
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: $gray-500;
+        }
+
+        &::placeholder {
+            color: $gray-300;
+        }
+    
+        @each $color in map-keys($theme-colors) {
+            &.form-control-#{$color} {
+                border-color: var(--#{$prefix}#{$color});
+    
+                &:focus {
+                    @include input-focus(#{$color});
+                }
+    
+                &+ .helper-text {
+                    margin-top: 0.25rem;
+                    font-weight: 500;
+                    font-size: 0.75rem;
+                    color: var(--#{$prefix}#{$color});
+                }
+            }
+        }
+
+        &.ng-valid,
+        &.ng-valid.ng-touched {
+            border-color: $gray-200;
+        }
+
+        &.ng-invalid {
+            @extend .form-control-danger;
+        }
+    }
+
+    &-form-select {
+
+        &.ng-select {
+            transition: box-shadow 0.15s ease-in-out;
+            border-radius: 6px;
+
+            &.ng-select-opened {
+                @include input-focus(primary);
+            }
+
+            .ng-select-container {
+                @extend .gu-form-control;
+
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &.ng-has-value {
+                    .ng-placeholder {
+                        display: none;
+                    }
+                }
+
+                .ng-placeholder {
+                    color: $gray-400;
+                }
+
+                .ng-arrow-wrapper {
+                    display: flex;
+                    align-items: center;
+                    
+                    .ng-arrow {
+                        width: 1rem;
+                        height: 100%;
+                        
+                        &::after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23647A93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>');
+                            height: 1rem;
+                            width: 1rem;
+                            display: block;
+                        }
+                    }
+                }
+
+                .ng-clear-wrapper {
+                    .ng-clear {
+                        margin-top: -2px;
+                        color: $gray-300;
+                    }
+                }
+            }
+
+            .ng-dropdown-panel {
+                margin-top: 0.5rem;
+                padding: 0.5rem 0;
+                background-color: $white;
+                box-shadow: $box-shadow-lg;
+                border-radius: 0.5rem;
+
+                .ng-option {
+                    transition: all 0.15s ease-in-out;
+                    padding: 0.5rem 0.75rem;
+
+                    &.ng-option-selected {
+                        background-color: $primary;
+                        color: $white;
+
+                        &:hover {
+                            background-color: var(--bs-primary-600);
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $gray-50;
+                    }
+                }
+            }
+        }
+    }
+
+    &-form-label {
+        @extend .form-label;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: $gray-700;
+    }
+}

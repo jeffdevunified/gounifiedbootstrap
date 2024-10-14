@@ -1,0 +1,41 @@
+.gu-pagination {
+    .pagination {
+        display: inline-flex;
+       box-shadow: $box-shadow-xs;
+    }
+
+    .page {
+        &-item {
+            &.active {
+                .page-link {
+                    background-color: $primary;
+                    border-color: $primary;
+                    color: $white;
+                }
+            }
+
+            &.disabled {
+                .page-link {
+                    background-color: $white;
+                }
+            }
+        }
+
+        &-link {
+            border: 1px solid $gray-200;
+            color: $gray-700;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &:focus {
+                box-shadow: none;
+                background-color: $white;
+            }
+        }
+    }
+}

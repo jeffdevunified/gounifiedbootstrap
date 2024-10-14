@@ -1,0 +1,10 @@
+.gu-card {
+    @extend .card;
+    border-color: $gray-100;
+    border-radius: 0.5rem;
+    box-shadow: $box-shadow-xs;
+
+    .card-body {
+        padding: 1.5rem;
+    }
+}

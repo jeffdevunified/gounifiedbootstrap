@@ -1,0 +1,66 @@
+
+.gu-alert {
+    box-shadow: $box-shadow-xs;
+    border-radius: 8px;
+
+    @each $state in map-keys($theme-colors) {
+        &.alert-#{$state} {
+            background-color: $white;
+            border-color: $gray-100;
+
+            svg {
+                color: var(--#{$prefix}#{$state});
+            }
+
+            .btn-close {
+                background-size: 0.613rem;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .alert {
+                &-heading {
+                    font-size: $font-size-root * 0.875;
+                    font-weight: 700;
+                    margin-bottom: 0.25rem;
+                    color: $gray-900;
+                }
+
+                &-content {
+                    color: $gray-700;
+                    margin-bottom: 0;
+                }
+
+                &-link {
+                    text-decoration: none;
+                    font-size: 0.75rem;
+                }
+
+                &-actions {
+                    margin-top: 0.5rem;
+
+                    .alert-link {
+                        cursor: pointer;
+                        
+                        &:first-child {
+                            color: $gray-300;
+                            margin-right: 0.5rem;
+                        }
+
+                        &:last-child {
+                            color: var(--#{$prefix}#{$state});
+                        }
+                    }
+                }
+            }
+
+            lucide-icon {
+                &.alert-icon {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

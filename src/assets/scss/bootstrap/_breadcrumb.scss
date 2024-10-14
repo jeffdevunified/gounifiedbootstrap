@@ -1,0 +1,25 @@
+.gu-breadcrumb {
+    @extend .breadcrumb;
+
+    .breadcrumb {
+        &-item {
+            &+ .breadcrumb-item {
+                &::before {
+                    transform: translateY(3px);
+                    margin-left: 0.25rem;
+                    margin-right: 0.25rem;
+                }
+            }
+
+            &:not(:last-child) {
+                font-weight: 600;
+            }
+
+            &:not(:first-child) {
+                &::before {
+                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23333c47bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>');
+                }
+            }
+        }
+    }
+}

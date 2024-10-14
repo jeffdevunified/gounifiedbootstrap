@@ -1,0 +1,64 @@
+.gu {
+    &-form-check {
+        @extend .form-check;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+
+        &-input {
+            @extend .form-check-input;
+            margin-top: 0;
+            width: 1.125rem;
+            height: 1.125rem;
+            border-color: $gray-200;
+            transition: all 0.1s ease-in-out;
+            &:checked[type=checkbox] {
+                background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>');
+            }
+    
+            &:checked[type=radio] {
+                background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle"><circle cx="12" cy="12" r="10"/></svg>');
+            }
+        }
+
+        &-label {
+            @extend .form-check-label;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        
+    }
+
+    &-form-switch {
+        @extend .form-switch;
+        
+        &-input {
+            @extend .gu-form-check-input;
+            height: 1.25rem !important;
+            width: 2rem !important;
+            background: $form-switch-bg-image;
+            background-repeat: no-repeat;
+            transition: all 0.1s ease-in-out;
+            background-color: $gray-200;
+            border-color: $gray-200;
+            border-radius: 3rem !important;
+
+            &:checked[role=switch] {
+                background-position: right;
+                background-image: $form-switch-bg-image;
+            }
+
+            &:active,
+            &:focus {
+                background-image: $form-switch-bg-image;
+                filter: brightness(100%);
+            }
+        }
+
+        &-label {
+            @extend .gu-form-check-label;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.gu-accordion {
+    @extend .accordion;
+
+    & > .accordion-item {
+        border-color: $gray-200;
+
+        &:first-child {
+            border-top: 1px solid $gray-200 !important;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $gray-200 !important;
+        }
+    }
+
+    .accordion {
+
+        &-button {
+            box-shadow: none;
+            padding: {
+                left: 0;
+                right: 0;
+            }
+
+            &:not(.collapsed) {
+                background-color: $white;
+            }
+        }
+
+        &-button:not(.collapsed)::after,
+        &-button::after {
+            content: unset !important;
+        }
+
+        &-item {
+            svg {
+                color: $gray-500;
+            }
+        }
+
+        &-body {
+            padding-top: 0;
+        }
+    }
+}
